@@ -1,0 +1,7 @@
+<ul id="blog_nav_bar">
+<% for blog in @blog_types %>
+  <li class="blog_nav_item">
+    <%= link_to blog.title, blog_path(blog), :remote => true %>
+  </li>
+<% end %>
+</ul>

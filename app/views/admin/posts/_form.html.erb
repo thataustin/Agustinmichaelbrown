@@ -1,0 +1,21 @@
+<%= form_for([:admin, @post], :remote => true) do |f| %>
+  <div id="post_errors" style="display:none"></div>
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :content %><br />
+    <%= f.text_area :content, :rows => 5 %>
+  </p>
+  <p>
+    <%= f.label :blog %><br />
+    <% 
+      blog_array = Blog.all.map { |blog| [blog.title, blog.id] } 
+      selected_index = @post.blog_id || 1;
+     %>
+      
+    <%= f.select(:blog_id, options_for_select(blog_array, selected_index))%>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>

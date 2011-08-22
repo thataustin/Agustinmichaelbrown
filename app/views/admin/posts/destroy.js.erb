@@ -1,0 +1,4 @@
+$('post_errors').fade('out');
+$('flash_notice').innerHTML = '<%= escape_javascript(flash[:notice])%>';
+$('flash_notice').fade('in');
+Agustin.update_inner_html('posts_list', '<%= escape_javascript( render(:partial => 'posts') ) %>');

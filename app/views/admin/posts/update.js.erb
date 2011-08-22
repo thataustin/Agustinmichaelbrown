@@ -1,0 +1,11 @@
+<% if @post.errors.any? -%>
+  $('flash_notice').fade('out');
+  $('post_errors').innerHTML = '<%= escape_javascript(error_messages_for(@post))%>';
+  $('post_errors').fade('in');
+<% else -%>
+  $('post_errors').fade('out');
+  $('flash_notice').innerHTML = '<%= escape_javascript(flash[:notice])%>';
+  $('flash_notice').fade('in');
+  Agustin.update_inner_html('post_form', '<%= escape_javascript(render(:partial => 'form'))%>');
+  Agustin.update_inner_html('posts_list', '<%= escape_javascript(render(:partial => 'posts')) %>');
+<% end -%>

@@ -1,0 +1,39 @@
+.post {
+  width: 60%;
+  padding: 1%;
+  padding-top: 0;
+  margin: 5px;
+  margin-top: 0;
+  position: relative;
+}
+
+.title {
+  border-bottom: 5px solid #3e5a3d;
+  background-color: #699b66;
+  padding-left: 3%;
+  font-family: verdana;
+  font-size: 2em;
+  color: #fff;
+  position: relative;
+  top: 0;
+  left: 0;
+  border-radius: 15px;
+  border-radius: 15px;
+  -moz-border-radius: 15px;
+  -moz-border-radius: 15px;
+}
+
+.content {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.floating_header {
+  position: fixed;
+  top: 0;
+  visibility: hidden;
+  border-radius: 15px;
+  -moz-border-radius: 15px;
+}
+
+

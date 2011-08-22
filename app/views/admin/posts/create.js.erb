@@ -1,0 +1,26 @@
+<% if @post.errors.any? -%>
+  /*hide the flash notice div*/
+  $('flash_notice').fade('out');
+ 
+  /*Update the html of the div post_errors with the new one*/
+  Agustin.update_inner_html('post_errors', '<%= escape_javascript(error_messages_for(@post))%>');
+ 
+  /*Show the div post_errors*/
+  $('post_errors').set('style', {'display' : 'block'});
+
+<% else -%>
+  /*Hide the div post_errors*/
+  $('post_errors').fade('out');
+ 
+  /*Update the html of the div flash_notice with the new one*/
+  $('flash_notice').innerHTML = '<%= escape_javascript(flash[:notice])%>';
+ 
+  /*Show the flash_notice div*/
+  $('flash_notice').fade('in');
+ 
+  /*Clear the entire form*/
+  Agustin.clear_form();
+
+  /*Replace the html of the div post_lists with the updated new one*/
+  Agustin.update_inner_html('posts_list', '<%= escape_javascript(render(:partial => 'posts'))%>');
+<% end -%>
